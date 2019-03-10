@@ -1,3 +1,30 @@
 <h2>
   Loan Calculator
 </h2><br>
+<div class="new-loan-div">
+  <div class="new-loan-form">
+
+    <%= form_for @loan do |f| %>
+    <%= render 'layouts/error_alerts', object: @loan  %>
+
+    <%= f.label :loan_amount %><br>
+    <%= f.text_field :loan_amount, class: 'form-control' %>
+
+    <%= f.label :monthly %><br>
+    <%= f.text_field :monthly, class: 'form-control' %>
+
+    <%= f.label :interest_rate %><br>
+    <%= f.text_field :interest_rate, class: 'form-control' %>
+
+    <%= f.label :loan_type %><br>
+    <%# <%= f.select :loan_type, options_for_select(Loan::VALID_LOAN_TYPE.each {|type|}), class: 'form-control' %><br> 
+
+    <%= f.label :request_date %><br>
+    <%= f.text_field :request_date, class: 'datepicker' %><br>
+
+    <%= f.submit "Generate Loan Calculation", class: "btn btn-primary"  %>
+
+    <% end %>
+
+  </div>
+</div>
