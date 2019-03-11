@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190310155607) do
+ActiveRecord::Schema.define(version: 20190310204422) do
 
   create_table "loans", force: :cascade do |t|
     t.integer "loan_amount"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20190310155607) do
     t.date "request_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "amortization_type"
   end
 
 end
