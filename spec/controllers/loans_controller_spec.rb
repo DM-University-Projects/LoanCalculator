@@ -42,7 +42,11 @@ RSpec.describe LoansController, type: :controller do
       it 'redirects to the amortization_schedule page on successful Loan creation' do
         post :create, loan: params_for_create
         loan = Loan.last
+<<<<<<< HEAD
         expect(response).to redirect_to generate_amortization_schedule_loan_path(loan)
+=======
+        expect(response).to redirect_to calculate_amortization_schedule_loan_path(loan)
+>>>>>>> b4be61b0148bdb2901ddfe4f8578c9840eb76389
       end
     end
 
@@ -62,18 +66,31 @@ RSpec.describe LoansController, type: :controller do
     end
   end
 
+<<<<<<< HEAD
   describe '#generate_amortization_schedule' do
+=======
+  describe '#calculate_amortization_schedule' do
+>>>>>>> b4be61b0148bdb2901ddfe4f8578c9840eb76389
     let(:loan) { create(:loan) }
 
     it 'should call amortization schedule method' do
       expect_any_instance_of(Loan).to receive(:amortization_schedule) { 'something' }
+<<<<<<< HEAD
       get :generate_amortization_schedule, id: loan.id
+=======
+      get :calculate_amortization_schedule, id: loan.id
+>>>>>>> b4be61b0148bdb2901ddfe4f8578c9840eb76389
       expect(assigns(:amortization_schedule)).to eq('something')
     end
 
     it "renders the 'index' template" do
+<<<<<<< HEAD
       response = get :generate_amortization_schedule, id: loan.id
       expect(response).to render_template :generate_amortization_schedule
+=======
+      response = get :calculate_amortization_schedule, id: loan.id
+      expect(response).to render_template :calculate_amortization_schedule
+>>>>>>> b4be61b0148bdb2901ddfe4f8578c9840eb76389
     end
   end
 end

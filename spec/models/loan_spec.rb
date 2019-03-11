@@ -1,5 +1,9 @@
 require 'rails_helper'
+<<<<<<< HEAD
 require 'equal_payments_amortization_schedule_creator'
+=======
+require 'equal_payments_schedule'
+>>>>>>> b4be61b0148bdb2901ddfe4f8578c9840eb76389
 
 RSpec.describe Loan, type: :model do
   it { is_expected.to have_db_column(:loan_amount).of_type(:integer) }
@@ -41,8 +45,13 @@ RSpec.describe Loan, type: :model do
 
   describe 'amortization schedule' do
     let(:loan) { build(:loan) }
+<<<<<<< HEAD
     it 'should invoke AmortizationScheduleGenerator sevice' do
       expect_any_instance_of(AmortizationScheduleGenerator).to receive(:perform) { 'something' }
+=======
+    it 'should invoke AmortizationScheduleCalculator sevice' do
+      expect_any_instance_of(AmortizationScheduleCalculator).to receive(:perform) { 'something' }
+>>>>>>> b4be61b0148bdb2901ddfe4f8578c9840eb76389
       expect(loan.amortization_schedule).to eq('something')
     end
   end

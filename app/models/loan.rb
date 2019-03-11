@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> b4be61b0148bdb2901ddfe4f8578c9840eb76389
 class Loan < ActiveRecord::Base
   VALID_AMORTIZATION_TYPE = ['Equal payments', 'First month different payment'].freeze
   validates :interest_rate, presence:  true, numericality: { greater_than: 0 },
